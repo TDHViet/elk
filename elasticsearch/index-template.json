@@ -1,0 +1,10 @@
+{
+    "index_patterns": ["weblogs*"],
+    "mappings": {
+      "properties": {
+        "response_code": {
+          "type": "keyword"
+        }
+      }
+    }
+}
