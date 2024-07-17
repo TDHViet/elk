@@ -124,3 +124,23 @@
 2024/07/15 04:05:53 [notice] 1#1: worker process 22 exited with code 0
 2024/07/15 04:05:53 [notice] 1#1: worker process 23 exited with code 0
 2024/07/15 04:05:53 [notice] 1#1: exit
+2024/07/15 07:42:22 [notice] 1#1: using the "epoll" event method
+2024/07/15 07:42:22 [notice] 1#1: nginx/1.27.0
+2024/07/15 07:42:22 [notice] 1#1: built by gcc 13.2.1 20231014 (Alpine 13.2.1_git20231014) 
+2024/07/15 07:42:22 [notice] 1#1: OS: Linux 6.5.0-41-generic
+2024/07/15 07:42:22 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/07/15 07:42:22 [notice] 1#1: start worker processes
+2024/07/15 07:42:22 [notice] 1#1: start worker process 19
+2024/07/15 07:42:22 [notice] 1#1: start worker process 20
+2024/07/15 07:42:22 [notice] 1#1: start worker process 21
+2024/07/15 07:42:22 [notice] 1#1: start worker process 22
+2024/07/16 07:44:18 [notice] 1#1: using the "epoll" event method
+2024/07/16 07:44:18 [notice] 1#1: nginx/1.27.0
+2024/07/16 07:44:18 [notice] 1#1: built by gcc 13.2.1 20231014 (Alpine 13.2.1_git20231014) 
+2024/07/16 07:44:18 [notice] 1#1: OS: Linux 6.5.0-41-generic
+2024/07/16 07:44:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/07/16 07:44:18 [notice] 1#1: start worker processes
+2024/07/16 07:44:18 [notice] 1#1: start worker process 20
+2024/07/16 07:44:18 [notice] 1#1: start worker process 21
+2024/07/16 07:44:18 [notice] 1#1: start worker process 22
+2024/07/16 07:44:18 [notice] 1#1: start worker process 23
