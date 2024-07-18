@@ -12,7 +12,6 @@ services:
         target: /usr/share/elasticsearch/config/elasticsearch.yml
         read_only: true
       - ./elasticsearch/index-template.json:/etc/filebeat/index-template.json
-    #   - elasticsearch:/usr/share/elasticsearch/data:rw
     ports:
       - "9200:9200"
     restart: always
