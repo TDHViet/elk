@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.7'
 
 services:
   elasticsearch:
@@ -11,9 +11,32 @@ services:
         source: ./elasticsearch/config/elasticsearch.yml
         target: /usr/share/elasticsearch/config/elasticsearch.yml
         read_only: true
+      - type: bind
+        source: ./elasticsearch/config/ca.crt
+        target: /usr/share/elasticsearch/config/ca.crt
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/node.crt
+        target: /usr/share/elasticsearch/config/node.crt
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/node.key
+        target: /usr/share/elasticsearch/config/node.key
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/ca.key
+        target: /usr/share/elasticsearch/config/ca.key
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/node.csr
+        target: /usr/share/elasticsearch/config/node.csr
+        read_only: true
       - ./elasticsearch/index-template.json:/etc/filebeat/index-template.json
+
     ports:
       - "9200:9200"
+    environment:
+      - ELASTIC_PASSWORD=changeme
     restart: always
     networks:
       - elk
@@ -31,6 +54,22 @@ services:
       - type: bind
         source: ./logstash/pipeline
         target: /usr/share/logstash/pipeline
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/ca.crt
+        target: /usr/share/logstash/config/certs/ca.crt
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/ca.key
+        target: /usr/share/logstash/config/certs/ca.key
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/node.key
+        target: /usr/share/logstash/config/certs/node.key
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/node.crt
+        target: /usr/share/logstash/config/certs/node.crt
         read_only: true
     ports:
       - "5000:5000"
@@ -53,6 +92,10 @@ services:
       - type: bind
         source: ./kibana/config/kibana.yml
         target: /usr/share/kibana/config/kibana.yml
+        read_only: true
+      - type: bind
+        source: ./elasticsearch/config/ca.crt
+        target: /usr/share/kibana/config/ca.crt
         read_only: true
     ports:
       - "5601:5601"

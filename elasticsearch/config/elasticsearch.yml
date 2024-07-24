@@ -4,15 +4,26 @@
 #
 cluster.name: "docker-cluster"
 network.host: "0.0.0.0"
-
+http.port: 9200
 ## Use single node discovery in order to disable production mode and avoid bootstrap checks
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 #
 discovery.type: single-node
 
+
 ## X-Pack settings
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html
 #
 xpack.license.self_generated.type: trial
-xpack.security.enabled: false
+xpack.security.enabled: true
 xpack.monitoring.collection.enabled: true
+
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.key: node.key
+xpack.security.transport.ssl.certificate: node.crt
+xpack.security.transport.ssl.certificate_authorities: [ "ca.crt" ]
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: node.key
+xpack.security.http.ssl.certificate: node.crt
+xpack.security.http.ssl.certificate_authorities: [ "ca.crt" ]

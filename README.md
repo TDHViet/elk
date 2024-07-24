@@ -22,6 +22,13 @@ Check version:
 - Check docker using this command: docker --version
 - Check docker compose using this command: docker-compose --version
 - Check Nginx server: nginx -v
+# SSL/TLS step to step configure
+Make sure create and bind it to folder config in elasticsearch
+- Creat CA: openssl req -new -x509 -days 365 -nodes -out ca.crt -keyout ca.key -subj "/CN=elk_CA"
+- Creat request CSR: openssl req -new -nodes -out node.csr -keyout node.key -subj "/CN=elk_node"
+- Creat authentication for CA: openssl x509 -req -in node.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out node.crt -days 365
+
+
 
 
 

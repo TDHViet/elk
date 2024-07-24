@@ -1220,3 +1220,6 @@
 172.22.0.1 - - [18/Jul/2024:03:36:58 +0000] "GET /error/server/ HTTP/1.1" 500 33 "-" "curl/7.81.0" "-"
 172.22.0.1 - - [18/Jul/2024:03:36:58 +0000] "GET /error/server/ HTTP/1.1" 500 33 "-" "curl/7.81.0" "-"
 172.22.0.1 - - [18/Jul/2024:03:36:58 +0000] "GET /error/server/ HTTP/1.1" 500 33 "-" "curl/7.81.0" "-"
+172.26.0.1 - - [23/Jul/2024:02:40:00 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" "-"
+172.26.0.1 - - [23/Jul/2024:02:40:10 +0000] "GET /error HTTP/1.1" 400 23 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" "-"
+172.26.0.1 - - [23/Jul/2024:02:40:34 +0000] "GET /error/server HTTP/1.1" 500 33 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" "-"
